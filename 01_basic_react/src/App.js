@@ -1,8 +1,11 @@
-
+import Chai from './Chai'
 
 function App() {
   return (
-    <h1> Starting with Allah's 99 names </h1>
+    <>
+      <Chai />
+      {/* <h1> Starting with Allah's 99 names </h1> */}
+    </>
   );
 }
 
