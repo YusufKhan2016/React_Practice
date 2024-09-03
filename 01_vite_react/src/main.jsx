@@ -36,6 +36,7 @@ here react's createElement method have a syntax as we can see by line:
 3. inner text */
 createRoot(document.getElementById('root')).render(
   
-    ReactElement 
+    ReactElement
+    // <App/>
   
 )
