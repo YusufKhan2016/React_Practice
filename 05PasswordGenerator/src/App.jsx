@@ -3,6 +3,7 @@ import { useState, useCallback, useEffect, useRef} from "react"
 
 function App() {
   //here we are setting the default values of length , numberAllowed, CharAllowed, password
+  const [buttonText, setButtonText] = useState("Copy");
   const [length, setLength] = useState(0);
   const [numberAllowed, setNumberAllowd] = useState(false);
   const [charAllowed, setCharAllowed] = useState(false);
@@ -22,13 +23,18 @@ function App() {
     }
     setPassword(pass)
 
-  }, [length,numberAllowed,charAllowed, setPassword]);
+  }, [length, numberAllowed, charAllowed, setPassword]);
 
   const copyPasswordToClipboard = useCallback(()=>{
     passwordRef.current?.select();
     password.current?.setSelectionRange(0,999) // this is used for specific range to copy
     window.navigator.clipboard.writeText(password)
-  },[password])
+    setButtonText("Copied");
+    setTimeout(() => {
+      setButtonText("Copy");
+    }, 3000);
+    
+  },[password, buttonText])
   
   useEffect(() =>{
     passwordGenerator()
@@ -48,7 +54,7 @@ function App() {
           />
           <button
           onClick={copyPasswordToClipboard}
-          className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0">copy</button>
+          className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0">{buttonText}</button>
         </div>
         <div className="flex text-sm gap-x-2">
           <div className="flex items-center gap-x-1">
