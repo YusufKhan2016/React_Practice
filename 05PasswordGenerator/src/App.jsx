@@ -46,15 +46,15 @@ function App() {
         <h1 className="text-white text-center my-3">Password Generator</h1>
         <div className="flex shadow rounded-lg overflow-hidden mb-4">
           <input type="text"
-          value={password}
-          className="outline-none w-full py-2 px-3 mt-2 rounded-lg" 
-          placeholder="Password"
-          readOnly
-          ref={passwordRef}
+            value={password}
+            className="outline-none w-full py-2 px-3 mt-2 rounded-lg" 
+            placeholder="Password"
+            readOnly
+            ref={passwordRef}
           />
           <button
-          onClick={copyPasswordToClipboard}
-          className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0">{buttonText}</button>
+            onClick={copyPasswordToClipboard}
+            className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0">{buttonText}</button>
         </div>
         <div className="flex text-sm gap-x-2">
           <div className="flex items-center gap-x-1">
