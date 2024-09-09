@@ -12,6 +12,8 @@ function App() {
   //useRef hook
   const passwordRef = useRef(null)
 
+  // userCallback hook
+
   const passwordGenerator = useCallback(()=>{
     let pass= "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -35,6 +37,8 @@ function App() {
     }, 3000);
     
   },[password, buttonText])
+
+  // useEffect hook
   
   useEffect(() =>{
     passwordGenerator()
