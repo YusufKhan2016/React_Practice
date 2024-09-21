@@ -9,7 +9,7 @@ function App() {
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState("");
 
-  //useRef hook
+  //useRef hook to pass anykind of reference of any other thing
   const passwordRef = useRef(null)
 
   // userCallback hook
